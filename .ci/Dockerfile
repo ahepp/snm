@@ -15,6 +15,7 @@ RUN apt-get update \
 USER dev
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && . "$HOME/.cargo/env" \
-    && cargo install cargo-watch
+    && cargo install cargo-watch \
+    && cargo install --locked trunk
 
 ENV PATH /home/dev/.cargo/bin:$PATH
