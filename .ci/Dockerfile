@@ -16,6 +16,7 @@ USER dev
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && . "$HOME/.cargo/env" \
     && cargo install cargo-watch \
-    && cargo install --locked trunk
+    && cargo install --locked trunk \
+    && rustup target add wasm32-unknown-unknown
 
 ENV PATH /home/dev/.cargo/bin:$PATH
