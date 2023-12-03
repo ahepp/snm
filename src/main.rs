@@ -1,3 +1,7 @@
+use sycamore::prelude::*;
+
 fn main() {
-    println!("Hello, world!");
+    sycamore::render(|cx| view! { cx,
+        p { "Hello, World!" }
+    });
 }
